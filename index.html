@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>finacord</title>
     <link rel="stylesheet" type="text/css" href="css/ui.css">
-  </head>
-  <body>
-      <nav class="sticky">
+</head>
+
+<body>
+    <nav class="sticky">
         <ul class="main-nav">
             <li><button>Sales</button></li>
             <li><button>Sales Report</button></li>
@@ -20,9 +22,9 @@
             <li><button>CashBook</button></li>
             <li><button>Warehouse</button></li>
         </ul>
-      </nav>
-      <div class="cardzone">
-      <!--  Cards code(tax & net) -->
+    </nav>
+    <div class="cardzone">
+        <!--  Cards code(tax & net) -->
         <div class="card tax">
             <h3>3% Tax Rate</h3>
             <output name="tax" for=""><h3>0.96</h3></output>
@@ -32,60 +34,62 @@
             <output name="tax" for=""><h3>31.04</h3></output>
         </div>
         <span id="total">Total<h2>32</h2></span>
-       </div>
-<!--  main view for containing cards and entry form    -->
-      <div class="mn_cont">
+    </div>
+    <!--  main view for containing cards and entry form    -->
+    <div class="mn_cont">
 
-<!--   form to take salesData     -->
+        <!--   form to take salesData     -->
         <div class="salesData">
-        <div class="formDes">
-          <form>
-              <label for="idate">Date</label>
-              <input type="date" name="idate" id="idate">
-              <label for="ipayment">Payment</label>
-              <select name="ipayment">
-                <option>Cash Sales</option>
-                <option>Credit Sales</option>
+            <div class="formDes">
+                <form>
+                    <label for="idate">Date</label>
+                    <input type="date" name="idate" id="idate">
+                    <label for="ipayment">Payment</label>
+                    <select name="ipayment" id="ipayment">
+                <option value="cash">Cash Sales</option>
+                <option value="credit">Credit Sales</option>
               </select>
-              <label for="iproduct">Product</label>
-              <input type="text" name="iproduct" id="iproduct" placeholder="product">
-              <label for="iqty">Quantity</label>
-              <input type="number" name="iqty" id="iqty" placeholder="quantity">
-              <label for="iunit">Unit Price</label>
-              <input type="number" name="iunit" id="iunit" placeholder="unit price">
-          </form>
-            <div id="btn_set">
-            <button class="btn_save btn">Save</button>
-            <button class="btn_calc btn">Done</button>
+                    <label for="iproduct">Product</label>
+                    <input type="text" name="iproduct" id="iproduct" placeholder="product">
+                    <label for="iqty">Quantity</label>
+                    <input type="number" name="iqty" id="iqty" placeholder="quantity">
+                    <label for="iunit">Unit Price</label>
+                    <input type="number" name="iunit" id="iunit" placeholder="unit price">
+                </form>
+                <div id="btn_set">
+                    <button class="btn_save btn">Save</button>
+                    <button class="btn_calc btn" id="done_btn">Done</button>
+                </div>
+            </div>
+            <div class="formDes">
+                <h3>Preview</h3>
+                <table id="preview_form">
+                    <tr>
+                        <th>Qty</th>
+                        <th>Unit</th>
+                        <th>Product</th>
+                        <th>Payment</th>
+                        <th>Total</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>8</td>
+                        <td>Onion</td>
+                        <td>Cash</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+
+                    </tr>
+                </table>
             </div>
         </div>
-          <div class="formDes">
-            <h3>Preview</h3>
-            <table id="preview_form">
-                <tr>
-                    <th>Qty</th>
-                    <th>Unit</th>
-                    <th>Product</th>
-                    <th>Payment</th>
-                    <th>Total</th>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>8</td>
-                    <td>Onion</td>
-                    <td>Cash</td>
-                    <td>32</td>
-                </tr>
-                <tr>
-                    
-                </tr>
-            </table>
-          </div>
-        </div>
-          
-      </div>
+
+    </div>
 
     <!-- You can also require other files to run in this process -->
     <script src="./renderer.js"></script>
-  </body>
+    <script src="./index.js"></script>
+</body>
+
 </html>
